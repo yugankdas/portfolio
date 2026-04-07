@@ -62,6 +62,12 @@ const ContactSection = () => {
           transform: translate(2px, 2px) !important;
           box-shadow: 4px 4px 0 var(--shadow) !important;
         }
+        @media (max-width: 600px) {
+          .contact-card {
+            padding: 2rem 1.5rem !important;
+            word-break: break-all;
+          }
+        }
       `}</style>
     </section>
   );
