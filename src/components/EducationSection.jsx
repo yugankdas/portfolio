@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const EducationSection = () => {
   const education = [
     {
-      degree: "Bachelor in Computer Applications",
+      degree: "Bachelor of Computer Applications, AIML and Data Science",
       institution: "Dayananda Sagar University",
       duration: "2025 – 2028",
       details: "Focusing on core computer science foundations and application development."
