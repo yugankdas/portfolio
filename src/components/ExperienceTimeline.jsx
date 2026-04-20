@@ -24,9 +24,14 @@ const ExperienceTimeline = () => {
       desc: "Explored quantitative finance and research workflows.",
     },
     {
-      role: "AI Trainer at Luel (YCW26)",
+      role: "AI Trainer — Luel (YCW26)",
       date: "Apr 2026 – Ongoing",
       desc: "Training and refining robust AI models, contributing to model evaluations and capability improvements.",
+    },
+    {
+      role: "Student Ambassador — Google",
+      date: "Apr 2026 – Ongoing",
+      desc: "Representing Google on campus and fostering a community of student developers through technical workshops and events.",
     }
   ];
 
@@ -37,13 +42,13 @@ const ExperienceTimeline = () => {
     target: targetRef,
   });
 
-  // Since we have 5 items, total width is 500vw.
-  // To reach the last item, we need to translate the container by -400vw.
-  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-400vw"]);
+  // Since we have 6 items, total width is 600vw.
+  // To reach the last item, we need to translate the container by -500vw.
+  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-500vw"]);
 
   return (
-    <section ref={targetRef} id="experience" style={{ position: 'relative', height: '500vh', background: 'var(--bg)' }}>
-      {/* Sticky container stays in place while scrolling down through the 500vh section */}
+    <section ref={targetRef} id="experience" style={{ position: 'relative', height: '600vh', background: 'var(--bg)' }}>
+      {/* Sticky container stays in place while scrolling down through the 600vh section */}
       <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         
         <h2 className="font-bebas" style={{ 
@@ -55,7 +60,7 @@ const ExperienceTimeline = () => {
         </h2>
 
         {/* The horizontal scrolling track */}
-        <motion.div style={{ x, display: 'flex', width: '500vw', height: '100%' }}>
+        <motion.div style={{ x, display: 'flex', width: '600vw', height: '100%' }}>
           {experiences.map((exp, i) => (
             <div key={i} style={{ 
               width: '100vw', 

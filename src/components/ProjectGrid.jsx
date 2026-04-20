@@ -18,10 +18,17 @@ const projects = [
   },
   {
     num: "03",
-    title: "Netflix Data Analysis",
-    desc: "Cleaned and analyzed a Netflix movies dataset to uncover patterns, trends, and insights.",
-    tags: ["Python", "EDA", "Data Analysis"],
-    link: "https://github.com/yugankdas/netflixanalysis"
+    title: "Talis",
+    desc: "AI-powered and voice-controlled desktop assistant designed for seamless system interaction.",
+    tags: ["Python", "Gen AI", "Voice Control"],
+    link: "https://github.com/yugankdas/talis"
+  },
+  {
+    num: "04",
+    title: "Sift",
+    desc: "AI-powered command line tool that compares git diffs and returns an autopsy report to prevent mindless vibe coding.",
+    tags: ["CLI", "LangChain", "Git"],
+    link: "https://github.com/yugankdas/sift-autopsy"
   }
 ];
 
@@ -34,11 +41,7 @@ const ProjectGrid = () => {
         PROJECTS
       </h2>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '3rem'
-      }}>
+      <div className="grid-container">
         {projects.map((proj, i) => (
           <motion.a
             key={i}
@@ -92,6 +95,16 @@ const ProjectGrid = () => {
         ))}
       </div>
       <style>{`
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3rem;
+        }
+        @media (max-width: 768px) {
+          .grid-container {
+            grid-template-columns: 1fr;
+          }
+        }
         .project-card:hover {
           transform: translateY(-8px) rotate(1deg) !important;
           box-shadow: 12px 12px 0 var(--shadow) !important;
