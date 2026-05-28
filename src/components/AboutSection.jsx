@@ -36,9 +36,9 @@ const AboutSection = () => {
         {/* Right Column: Stat Grid */}
         <div style={{ flex: '1 1 400px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '2rem' }}>
           {[
-            { label: '3+', desc: 'Projects' },
-            { label: '3+', desc: 'Hackathons Led' },
-            { label: '2', desc: 'Professional Roles' },
+            { label: '10+', desc: 'Projects' },
+            { label: '4', desc: 'Hackathons Led' },
+            { label: '5', desc: 'Professional Roles' },
             { label: '2', desc: 'Industry Simulations' }
           ].map((stat, i) => (
             <motion.div 

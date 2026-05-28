@@ -4,27 +4,35 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     num: "01",
+    title: "Klover",
+    desc: "A lightweight DSL aimed for rapid UI prototyping or education, featuring semantic parsing and rendering in JavaScript.",
+    tags: ["DSL", "Semantic Parsing", "JavaScript"],
+    link: "https://github.com/yugankdas/klover",
+    featured: true
+  },
+  {
+    num: "02",
     title: "F1 Pit Stop Strategy Analysis",
     desc: "Analyzed how pit stop strategies impacted finishing positions across Formula 1 seasons from 2022–2024 using Python and data analysis.",
     tags: ["Python", "Pandas", "Data Analysis"],
     link: "https://github.com/yugankdas/f1python"
   },
   {
-    num: "02",
-    title: "VidyaMitra",
-    desc: "AI-powered career assistant with interview prep, mock interviews, personalized roadmaps, and job discovery.",
-    tags: ["Gen AI", "React", "Python"],
-    link: "https://github.com/yugankdas/vidyamitra"
+    num: "03",
+    title: "Pentiq",
+    desc: "An autonomous multi-agent pipeline featuring five agents that debate and execute actions.",
+    tags: ["Agentic AI", "Data Science", "MLOps"],
+    link: "https://github.com/yugankdas/anvil"
   },
   {
-    num: "03",
+    num: "04",
     title: "Talis",
     desc: "AI-powered and voice-controlled desktop assistant designed for seamless system interaction.",
     tags: ["Python", "Gen AI", "Voice Control"],
     link: "https://github.com/yugankdas/talis"
   },
   {
-    num: "04",
+    num: "05",
     title: "Sift",
     desc: "AI-powered command line tool that compares git diffs and returns an autopsy report to prevent mindless vibe coding.",
     tags: ["CLI", "LangChain", "Git"],
@@ -52,7 +60,7 @@ const ProjectGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ type: 'spring', stiffness: 100, damping: 20, delay: i * 0.1 }}
-            className="project-card"
+            className={`project-card ${proj.featured ? 'featured' : ''}`}
             style={{
               background: 'var(--surface)',
               border: '3px solid var(--border)',
@@ -100,9 +108,15 @@ const ProjectGrid = () => {
           grid-template-columns: repeat(2, 1fr);
           gap: 3rem;
         }
+        .project-card.featured {
+          grid-column: span 2;
+        }
         @media (max-width: 768px) {
           .grid-container {
             grid-template-columns: 1fr;
+          }
+          .project-card.featured {
+            grid-column: span 1;
           }
         }
         .project-card:hover {
